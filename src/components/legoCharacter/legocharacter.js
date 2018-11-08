@@ -1,67 +1,87 @@
 import $ from 'jquery';
 import partsData from '../../data/partsData';
+import dropdown from '../Dropdown/dropdown';
 
-const writeHeads = (arrayOfHeads) => {
+const writeSelectedHead = (clickedHead) => {
   let domString = '';
-  arrayOfHeads.forEach((head) => {
-    domString += `
-    <div id='${head.id}' class='card col-1 p-1 m-2'>
-      <img class='card-img-top' src=${head.imageUrl}
-      <div class="card-body">
-          <p class="card-title text-center p-2 m-0">${head.name}</p>
-      </div>`;
-  });
+  domString += `
+    <div id='${clickedHead[0].id}' class='card col-3 p-1 m-2'>
+      <img class='card-img-top' src=${clickedHead[0].imageUrl}
+    </div>`;
   $('#head').html(domString);
+  $('#head-name').html(clickedHead[0].name);
 };
 
-const writeTorsos = (arrayOfTorsos) => {
+const writeSelectedTorso = (clickedTorso) => {
   let domString = '';
-  arrayOfTorsos.forEach((torso) => {
-    domString += `
-    <div id='${torso.id}' class='card col-1 p-1 m-2'>
-      <img class='card-img-top' src=${torso.imageUrl}
-      <div class="card-body">
-          <p class="card-title text-center p-2 m-0">${torso.name}</p>
-      </div>`;
-  });
+  domString += `
+    <div id='${clickedTorso[0].id}' class='card col-3 p-1 m-2'>
+      <img class='card-img-top' src=${clickedTorso[0].imageUrl}
+    </div>`;
   $('#torso').html(domString);
+  $('#torso-name').html(clickedTorso[0].name);
 };
 
-const writeLegs = (arrayOfLegs) => {
+const writeSelectedLeg = (clickedLeg) => {
   let domString = '';
-  arrayOfLegs.forEach((leg) => {
-    domString += `
-    <div id='${leg.id}' class='card col-1 p-1 m-2'>
-      <img class='card-img-top' src=${leg.imageUrl}
-      <div class="card-body">
-          <p class="card-title text-center p-2 m-0">${leg.name}</p>
-      </div>`;
-  });
+  domString += `
+    <div id='${clickedLeg[0].id}' class='card col-3 p-1 m-2'>
+      <img class='card-img-top' src=${clickedLeg[0].imageUrl}
+    </div>`;
   $('#leg').html(domString);
+  $('#leg-name').html(clickedLeg[0].name);
+};
+
+const selectedHead = (clickedHeadId) => {
+  partsData.getHeadsData().then((heads) => {
+    const allHeads = heads.data;
+    const clickedHead = allHeads.filter(head => head.id === clickedHeadId);
+    writeSelectedHead(clickedHead);
+  });
+};
+
+const selectedTorso = (clickedTorsoId) => {
+  partsData.getTorsosData().then((torsos) => {
+    const allTorsos = torsos.data;
+    const clickedTorso = allTorsos.filter(torso => torso.id === clickedTorsoId);
+    writeSelectedTorso(clickedTorso);
+  });
+};
+
+const selectedLeg = (clickedLegId) => {
+  partsData.getLegsData().then((legs) => {
+    const allLegs = legs.data;
+    const clickedLeg = allLegs.filter(leg => leg.id === clickedLegId);
+    writeSelectedLeg(clickedLeg);
+  });
 };
 
 const getHeads = () => {
-  partsData.getHeadsData().then((heads) => {
-    writeHeads(heads.data);
-  }).catch((error) => {
-    console.error(error);
-  });
+  partsData.getHeadsData()
+    .then((heads) => {
+      const allHeads = heads.data;
+      dropdown.getHeadsInDropdown(allHeads);
+    }).catch((error) => {
+      console.error(error);
+    });
 };
 
 const getTorsos = () => {
-  partsData.getTorsosData().then((torsos) => {
-    writeTorsos(torsos.data);
-  }).catch((error) => {
-    console.error(error);
-  });
+  partsData.getTorsosData()
+    .then((torsos) => {
+      dropdown.getTorsosInDropdown(torsos.data);
+    }).catch((error) => {
+      console.error(error);
+    });
 };
 
 const getLegs = () => {
-  partsData.getLegsData().then((legs) => {
-    writeLegs(legs.data);
-  }).catch((error) => {
-    console.error(error);
-  });
+  partsData.getLegsData()
+    .then((legs) => {
+      dropdown.getLegsInDropdown(legs.data);
+    }).catch((error) => {
+      console.error(error);
+    });
 };
 
 const getAndPrintAllParts = () => {
@@ -70,4 +90,9 @@ const getAndPrintAllParts = () => {
   getLegs();
 };
 
-export default getAndPrintAllParts;
+export default {
+  getAndPrintAllParts,
+  selectedHead,
+  selectedLeg,
+  selectedTorso,
+};
