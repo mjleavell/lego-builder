@@ -1,15 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lego Builder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lego Builder</title>
 </head>
+
 <body>
-  <div id="head" class="d-flex justify-content-center"></div>
-  <div id="torso" class="d-flex justify-content-center"></div>
-  <div id="leg" class="d-flex justify-content-center"></div>
-  <div id="output"></div>
+    <h1 class="text-center">Lego Builder</h1>
+    <!-- Dropdown -->
+    <div class="row">
+        <div class="head-dropdown col text-center">
+            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Head
+            </button>
+            <div class="dropdown-menu" id="head-select" aria-labelledby="dropdownMenuButton"></div>
+        </div>
+    
+        <div class="torso-dropdown col text-center">
+            <button class="btn btn-warning text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Torso
+            </button>
+            <div class="dropdown-menu" id="torso-select" aria-labelledby="dropdownMenuButton"></div>
+        </div>
+    
+        <div class="legs-dropdown col text-center">
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Legs
+            </button>
+            <div class="dropdown-menu" id="leg-select" aria-labelledby="dropdownMenuButton"></div>
+        </div>
+        <div class="col text-center">
+            <button class="btn btn-primary" id="random-btn">Random Lego</button>
+        </div>
+        <div class="col text-center">
+            <button class="btn btn-secondary" id="save-btn">Save Lego</button>
+        </div>
+    </div>
+    
+
+    <!-- Parts -->
+    <div id="head" class="d-flex justify-content-center"></div>
+    <div id="torso" class="d-flex justify-content-center"></div>
+    <div id="leg" class="d-flex justify-content-center"></div>
+    <div class="row">
+        <div class="col text-center" id="head-name"></div>
+        <div class="col text-center" id="torso-name"></div>
+        <div class="col text-center" id="leg-name"></div>
+    </div>
+    <div id="output"></div>
 </body>
+
 </html>
