@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import partsData from '../../data/partsData';
-import dropdown from '../Dropdown/dropdown';
 
 const writeSelectedHead = (clickedHead) => {
   let domString = '';
@@ -56,42 +55,7 @@ const selectedLeg = (clickedLegId) => {
   });
 };
 
-const getHeads = () => {
-  partsData.getHeadsData()
-    .then((heads) => {
-      const allHeads = heads.data;
-      dropdown.getHeadsInDropdown(allHeads);
-    }).catch((error) => {
-      console.error(error);
-    });
-};
-
-const getTorsos = () => {
-  partsData.getTorsosData()
-    .then((torsos) => {
-      dropdown.getTorsosInDropdown(torsos.data);
-    }).catch((error) => {
-      console.error(error);
-    });
-};
-
-const getLegs = () => {
-  partsData.getLegsData()
-    .then((legs) => {
-      dropdown.getLegsInDropdown(legs.data);
-    }).catch((error) => {
-      console.error(error);
-    });
-};
-
-const getAndPrintAllParts = () => {
-  getHeads();
-  getTorsos();
-  getLegs();
-};
-
 export default {
-  getAndPrintAllParts,
   selectedHead,
   selectedLeg,
   selectedTorso,

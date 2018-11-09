@@ -1,12 +1,12 @@
 import $ from 'jquery';
 import 'bootstrap';
 import './index.scss';
-import legoCharacter from './components/LegoCharacter/legoCharacter';
+import populatePartDropdowns from './components/Dropdown/dropdown';
 import dropdownEvent from './components/Dropdown/dropdownEvent';
 import savedCharEvent from './components/SavedCharacter/savedCharacter';
 
 const initApp = () => {
-  legoCharacter.getAndPrintAllParts();
+  populatePartDropdowns();
   dropdownEvent.selectedHeadEvent();
   dropdownEvent.selectedTorsoEvent();
   dropdownEvent.selectedLegEvent();

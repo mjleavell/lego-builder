@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import partsData from '../../data/partsData';
 
 const getHeadsInDropdown = (headsArray) => {
   let domString = '';
@@ -24,8 +25,38 @@ const getLegsInDropdown = (legsArray) => {
   $('#leg-select').html(domString);
 };
 
-export default {
-  getHeadsInDropdown,
-  getLegsInDropdown,
-  getTorsosInDropdown,
+const getHeads = () => {
+  partsData.getHeadsData()
+    .then((heads) => {
+      const allHeads = heads.data;
+      getHeadsInDropdown(allHeads);
+    }).catch((error) => {
+      console.error(error);
+    });
 };
+
+const getTorsos = () => {
+  partsData.getTorsosData()
+    .then((torsos) => {
+      getTorsosInDropdown(torsos.data);
+    }).catch((error) => {
+      console.error(error);
+    });
+};
+
+const getLegs = () => {
+  partsData.getLegsData()
+    .then((legs) => {
+      getLegsInDropdown(legs.data);
+    }).catch((error) => {
+      console.error(error);
+    });
+};
+
+const populatePartDropdowns = () => {
+  getHeads();
+  getLegs();
+  getTorsos();
+};
+
+export default populatePartDropdowns;
