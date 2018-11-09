@@ -24,7 +24,12 @@ const savedCharEvent = () => {
     savedCharacter.push({
       head, torso, leg, name,
     });
-    console.log(savedCharacter);
+    $('#head').html('');
+    $('#torso').html('');
+    $('#leg').html('');
+    $('#head-name').html('');
+    $('#torso-name').html('');
+    $('#leg-name').html('');
     return writeNewCharacter(savedCharacter);
   });
 };
