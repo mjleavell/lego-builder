@@ -1,5 +1,6 @@
 {
-	"heads": [{
+	"heads": [
+		{
 			"id": "head1",
 			"imageUrl": "https://cdn8.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/112693/128893/lego-minifigure-parts-basic-head-with-smirk-and-dimple-loose-head-loose-8__98272.1461390142.jpg?c=2&imbypass=on",
 			"name": "ast"
@@ -40,7 +41,8 @@
 			"name": "wonder"
 		}
 	],
-	"torsos": [{
+	"torsos": [
+		{
 			"id": "torso1",
 			"imageUrl": "https://img.brickowl.com/files/image_cache/larger/lego-minifigure-torso-with-spaceman-and-green-undershirt-76382-30.jpg",
 			"name": "ron"
@@ -81,7 +83,8 @@
 			"name": "wo"
 		}
 	],
-	"legs": [{
+	"legs": [
+		{
 			"id": "leg1",
 			"imageUrl": "https://i.ebayimg.com/images/g/DL8AAOSwXrhXmu8x/s-l300.jpg",
 			"name": "aut"
