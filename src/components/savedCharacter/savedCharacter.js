@@ -1,9 +1,10 @@
 import $ from 'jquery';
+import './savedCharacter.scss';
 
 const writeNewCharacter = (savedChar) => {
   let domString = '';
   domString += `
-  <div class="card" style="width: 5rem;">
+  <div class="card">
     <img class="card-img-top saved-img" src="${savedChar[0].head}" alt="Card image cap">
     <img class="card-img-top saved-img" src="${savedChar[0].torso}" alt="Card image cap">
     <img class="card-img-top saved-img" src="${savedChar[0].leg}" alt="Card image cap">
@@ -24,6 +25,7 @@ const savedCharEvent = () => {
     savedCharacter.push({
       head, torso, leg, name,
     });
+    $('#saved-title').show();
     $('#head').html('');
     $('#torso').html('');
     $('#leg').html('');

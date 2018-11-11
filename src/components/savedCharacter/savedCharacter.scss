@@ -1,0 +1,33 @@
+#output {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  height: auto;
+  margin: 1rem;
+  .card {
+    height: 13rem;
+    width: 6rem;
+    margin: 0.5rem;
+    text-align: center;
+    padding: 0.5rem;
+    display: block;
+    img {
+
+      height: 3rem;
+      width: 3rem;
+    }
+    p {
+      padding-top: .25rem;
+      margin: auto 0 auto 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+}
+
+#saved-title {
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  font-weight: bolder;
+  color: white;
+  text-shadow: 2px 2px black;
+}

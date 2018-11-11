@@ -9,50 +9,56 @@
 </head>
 
 <body>
-    <h1 class="text-center">Lego Builder</h1>
-    <!-- Dropdown -->
-    <div class="row">
-        <div class="head-dropdown col text-center">
-            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose Head
-            </button>
-            <div class="dropdown-menu" id="head-select" aria-labelledby="dropdownMenuButton"></div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <h4 class="navbar-brand m-0 text-danger p-0" id="lego-title">LEGO BUILDER</h4>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="btn dropdown-toggle text-white btn-danger" id="dropdown01" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Choose Head</a>
+                    <div class="dropdown-menu" id="head-select" aria-labelledby="dropdown04">
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="btn dropdown-toggle btn-warning text-white" id="dropdown02" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Choose Torso</a>
+                    <div class="dropdown-menu" id="torso-select" aria-labelledby="dropdown04">
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle btn btn-success text-white" id="dropdown03" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Choose Lego</a>
+                    <div class="dropdown-menu" id="leg-select" aria-labelledby="dropdown04">
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="bg-primary btn text-white" id="random-btn">Random Lego</a>
+                </li>
+                <li class="nav-item">
+                    <a class="bg-secondary btn text-white" id="save-btn">Save Lego</a>
+                </li>
+            </ul>
         </div>
-    
-        <div class="torso-dropdown col text-center">
-            <button class="btn btn-warning text-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose Torso
-            </button>
-            <div class="dropdown-menu" id="torso-select" aria-labelledby="dropdownMenuButton"></div>
-        </div>
-    
-        <div class="legs-dropdown col text-center">
-            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Choose Legs
-            </button>
-            <div class="dropdown-menu" id="leg-select" aria-labelledby="dropdownMenuButton"></div>
-        </div>
-        <div class="col text-center">
-            <button class="btn btn-primary" id="random-btn">Random Lego</button>
-        </div>
-        <div class="col text-center">
-            <button class="btn btn-secondary" id="save-btn">Save Lego</button>
-        </div>
-    </div>
-    
-
+    </nav>
     <!-- Parts -->
     <div id="initial-output">
-        <div id="head" class="d-flex justify-content-center"></div>
-        <div id="torso" class="d-flex justify-content-center"></div>
-        <div id="leg" class="d-flex justify-content-center"></div>
+        <div id="head" class="d-flex justify-content-center init-char"></div>
+        <div id="torso" class="d-flex justify-content-center init-char"></div>
+        <div id="leg" class="d-flex justify-content-center init-char"></div>
         <div class="row" id="lego-name">
-            <div class="col text-center" id="head-name"></div>
-            <div class="col text-center" id="torso-name"></div>
-            <div class="col text-center" id="leg-name"></div>
+            <h5 class="col text-center init-name" id="head-name"></h5>
+            <h5 class="col text-center init-name" id="torso-name"></h5>
+            <h5 class="col text-center init-name" id="leg-name"></h5>
         </div>
     </div>
-    <div id="output"></div>
+    <div>
+        <h3 style="display: none;" id="saved-title">My Legos:</h3>
+        <div id="output"></div>
+    </div>
 </body>
 
 </html>

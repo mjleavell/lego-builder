@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import partsData from '../../data/partsData';
+import './dropdown.scss';
 
 const getHeadsInDropdown = (headsArray) => {
   let domString = '';
