@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <h1 class="text-center">Lego Builder</h1>
+    <h1>Lego Builder</h1>
     <!-- Dropdown -->
-    <div class="row">
+    <div class="row" id="dropdown-div">
         <div class="head-dropdown col text-center">
             <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Choose Head
@@ -39,20 +39,22 @@
             <button class="btn btn-secondary" id="save-btn">Save Lego</button>
         </div>
     </div>
-    
 
     <!-- Parts -->
     <div id="initial-output">
-        <div id="head" class="d-flex justify-content-center"></div>
-        <div id="torso" class="d-flex justify-content-center"></div>
-        <div id="leg" class="d-flex justify-content-center"></div>
+        <div id="head" class="d-flex justify-content-center init-char"></div>
+        <div id="torso" class="d-flex justify-content-center init-char"></div>
+        <div id="leg" class="d-flex justify-content-center init-char"></div>
         <div class="row" id="lego-name">
             <div class="col text-center" id="head-name"></div>
             <div class="col text-center" id="torso-name"></div>
             <div class="col text-center" id="leg-name"></div>
         </div>
     </div>
-    <div id="output"></div>
+    <div>
+        <h3 style="display: none;" id="saved-title">My Legos:</h3>
+        <div id="output"></div>
+    </div>
 </body>
 
 </html>
