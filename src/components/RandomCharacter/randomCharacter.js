@@ -5,8 +5,7 @@ import legoCharacter from '../LegoCharacter/legoCharacter';
 const getRandomHead = () => {
   $('#random-btn').on('click', () => {
     partsData.getHeadsData().then((heads) => {
-      const allHeads = heads.data;
-      const randomHead = allHeads[Math.floor(Math.random() * 8)];
+      const randomHead = heads[Math.floor(Math.random() * 8)];
       legoCharacter.writeSelectedHead(randomHead);
     });
   });
@@ -15,8 +14,7 @@ const getRandomHead = () => {
 const getRandomTorso = () => {
   $('#random-btn').on('click', () => {
     partsData.getTorsosData().then((torsos) => {
-      const allTorsos = torsos.data;
-      const randomTorso = allTorsos[Math.floor(Math.random() * 8)];
+      const randomTorso = torsos[Math.floor(Math.random() * 8)];
       legoCharacter.writeSelectedTorso(randomTorso);
     });
   });
@@ -25,8 +23,7 @@ const getRandomTorso = () => {
 const getRandomLegs = () => {
   $('#random-btn').on('click', () => {
     partsData.getLegsData().then((legs) => {
-      const allLegs = legs.data;
-      const randomLeg = allLegs[Math.floor(Math.random() * 8)];
+      const randomLeg = legs[Math.floor(Math.random() * 8)];
       legoCharacter.writeSelectedLeg(randomLeg);
     });
   });
