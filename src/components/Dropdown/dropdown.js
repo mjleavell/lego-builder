@@ -29,8 +29,8 @@ const getLegsInDropdown = (legsArray) => {
 const getHeads = () => {
   partsData.getHeadsData()
     .then((heads) => {
-      const allHeads = heads.data;
-      getHeadsInDropdown(allHeads);
+      // const allHeads = heads.data;
+      getHeadsInDropdown(heads);
     }).catch((error) => {
       console.error(error);
     });
@@ -39,7 +39,7 @@ const getHeads = () => {
 const getTorsos = () => {
   partsData.getTorsosData()
     .then((torsos) => {
-      getTorsosInDropdown(torsos.data);
+      getTorsosInDropdown(torsos);
     }).catch((error) => {
       console.error(error);
     });
@@ -48,7 +48,7 @@ const getTorsos = () => {
 const getLegs = () => {
   partsData.getLegsData()
     .then((legs) => {
-      getLegsInDropdown(legs.data);
+      getLegsInDropdown(legs);
     }).catch((error) => {
       console.error(error);
     });

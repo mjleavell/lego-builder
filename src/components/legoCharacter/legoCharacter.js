@@ -34,24 +34,21 @@ const writeSelectedLeg = (clickedLeg) => {
 
 const selectedHead = (clickedHeadId) => {
   partsData.getHeadsData().then((heads) => {
-    const allHeads = heads.data;
-    const clickedHead = allHeads.filter(head => head.id === clickedHeadId);
+    const clickedHead = heads.filter(head => head.id === clickedHeadId);
     writeSelectedHead(clickedHead[0]);
   });
 };
 
 const selectedTorso = (clickedTorsoId) => {
   partsData.getTorsosData().then((torsos) => {
-    const allTorsos = torsos.data;
-    const clickedTorso = allTorsos.filter(torso => torso.id === clickedTorsoId);
+    const clickedTorso = torsos.filter(torso => torso.id === clickedTorsoId);
     writeSelectedTorso(clickedTorso[0]);
   });
 };
 
 const selectedLeg = (clickedLegId) => {
   partsData.getLegsData().then((legs) => {
-    const allLegs = legs.data;
-    const clickedLeg = allLegs.filter(leg => leg.id === clickedLegId);
+    const clickedLeg = legs.filter(leg => leg.id === clickedLegId);
     writeSelectedLeg(clickedLeg[0]);
   });
 };

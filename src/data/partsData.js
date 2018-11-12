@@ -16,7 +16,6 @@ const getHeadsData = () => new Promise((resolve, reject) => {
           allHeadsArray.push(newHead);
         });
       }
-      console.log(allHeadsArray);
       resolve(allHeadsArray);
     })
     .catch((err) => {
@@ -37,7 +36,6 @@ const getTorsosData = () => new Promise((resolve, reject) => {
           allTorsosArray.push(newTorso);
         });
       }
-      console.log(allTorsosArray);
       resolve(allTorsosArray);
     })
     .catch((err) => {
@@ -58,7 +56,6 @@ const getLegsData = () => new Promise((resolve, reject) => {
           allLegsArray.push(newLeg);
         });
       }
-      console.log(allLegsArray);
       resolve(allLegsArray);
     })
     .catch((err) => {
