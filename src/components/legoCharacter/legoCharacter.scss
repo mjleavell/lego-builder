@@ -15,3 +15,14 @@
     color: white;
   }
 }
+
+.flip {
+  -webkit-perspective: 800;
+}
+.flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+}
+.flip .card {
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+}
