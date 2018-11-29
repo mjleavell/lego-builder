@@ -17,6 +17,9 @@
 * jQuery
 * Axios
 * Sass
+* Firebase
+* CRUD
+* Webpack
 
 ### Screenshots
 Homepage
@@ -27,17 +30,13 @@ Saving a lego
 ![screenshot1](./screenshots/savelego.png)
 
 ### How to run application
- * Use npm to install webpack in your terminal:
-```sh
-npm install
-```
-* Run the server in your terminal
-```sh
-npm start -p 9999
-```
-* Open chrome and navigate to:
-```
-localhost:9999
-```
+1. Set up a new firebase project
+2. Configure Firebase
+  * In the db folder rename apiKeys.json.example to apiKeys.json
+  * Add in the config object from your firebase project
+3. Serve up the app
+* At the root of the project: `npm install`
+* `npm start -p 9999`
+* Open chrome and navigate to: `localhost:9999`
  ### Contributors
 [Maggie Leavell](https://github.com/mjleavell)
